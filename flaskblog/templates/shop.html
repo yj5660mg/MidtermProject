@@ -1,0 +1,140 @@
+{% extends 'layout.html' %}
+{% block content %}
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+body {font-family: Arial;}
+
+/* Style the tab */
+.tab {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    font-size: 17px;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+    background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+    background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+}
+</style>
+</head>
+<body>
+
+<h2>Countries</h2>
+<p>Click on the counties that you would like to order from!</p>
+
+<div class="tab">
+  <button class="tablinks" onclick="openCity(event, 'China')">China</button>
+  <button class="tablinks" onclick="openCity(event, 'Germany')">Germany</button>
+  <button class="tablinks" onclick="openCity(event, 'Italy')">Italy</button>
+  <button class="tablinks" onclick="openCity(event, 'Japan')">Japan</button>
+  <button class="tablinks" onclick="openCity(event, 'Korea')">Korea</button>
+  <button class="tablinks" onclick="openCity(event, 'Norway')">Norway</button>
+  <button class="tablinks" onclick="openCity(event, 'Switzerland')">Switzerland</button>
+</div>
+
+<div id="China" class="tabcontent">
+  <h3>China</h3>
+  <p>China</p>
+   <img src="http://www.cgfair.com/allimages/pro_pic/images-f/150/56085.jpg" width="170" height="175">
+   <img src="http://www.cgfair.com/allimages/pro_pic/images-f/150/56086.jpg" width="170" height="175">
+   <img src="http://www.cgfair.com/allimages/pro_pic/images-f/150/56084.jpg" width="170" height="175">
+    <br>
+  <button type="button" class="btn btn-success">Add to Cart</button>
+</div>
+
+<div id="Germany" class="tabcontent">
+  <h3>Germany</h3>
+  <p>Germany has one of the most famous chocolates in Europe. "Kinder"!</p>
+    <img src="https://images-na.ssl-images-amazon.com/images/I/51uc3TAcAbL._SX355_.jpg"  width="270" height="175">
+  <img src="https://www.parents-testeurs.com/wp-content/uploads/2017/03/KINDER-SURPRISE-Kinder.png" width="170" height="155">
+  <br>
+  <button type="button" class="btn btn-success">Add to Cart</button>
+</div>
+
+<div id="Italy" class="tabcontent">
+  <h3>Italy</h3>
+  <p>Only in Italy, but here you can have it within 10-15 business days ship/handlin</p>
+  <img src="https://www.goccedisicilia.com/818-thickbox_dm/modica-coconut-chocolate-.jpg" width="270" height="175">
+  <img src="https://www.goccedisicilia.com/910-thickbox_dm/modica-pineapple-chocolate.jpg" width="270" height="175">
+  <img src="https://www.goccedisicilia.com/810-thickbox_dm/modica-chocolate-with-nero-d-avola-wine.jpg" width="270" height="175">
+  <br>
+  <button type="button" class="btn btn-success">Add to Cart</button>
+</div>
+
+<div id="Japan" class="tabcontent">
+  <h3>Japan</h3>
+  <p>Japan has many different flavored chocolates, but here we have Meiji and KitKat!</p>
+  <img src="https://www.meiji.com/global/products/lineup/chocolate/images/001-s.jpg" width="270" height="175">
+  <img src="https://tokyo5.files.wordpress.com/2013/10/kit-kat.jpg" width="270" height="175">
+  <br>
+  <button type="button" class="btn btn-success">Add to Cart</button>
+</div>
+
+<div id="Korea" class="tabcontent">
+  <h3>Korea</h3>
+  <p>Only in Korea, but here you can have it within 10-15 business days ship/handling</p>
+  <br>
+  <button type="button" class="btn btn-success">Add to Cart</button>
+</div>
+
+<div id="Norway" class="tabcontent">
+  <h3>Norway</h3>
+  <p>Only in Norway, but here you can have it within 10-15 business days ship/handling</p>
+  <img src="https://scandaffaren.com/wp-content/uploads/2014/08/candy-confections-Freia-firklover-hazelnut-CI24371.jpg" width="290" height="135">
+
+  <br>
+  <button type="button" class="btn btn-success">Add to Cart</button>
+</div>
+
+<div id="Switzerland" class="tabcontent">
+  <h3>Switzerland</h3>
+  <p>Only in Switzerland, but here you can have it within 10-15 business days ship/handling</p>
+  <img src="https://heatherschocs.files.wordpress.com/2011/08/milka-milk_chocolate_white_happy-cows.jpg" width="270" height="100">
+    <br>
+  <button type="button" class="btn btn-success">Add to Cart</button>
+</div>
+
+<script>
+function openCity(evt, cityName) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    document.getElementById(cityName).style.display = "block";
+    evt.currentTarget.className += " active";
+}
+</script>
+{% endblock content %}
